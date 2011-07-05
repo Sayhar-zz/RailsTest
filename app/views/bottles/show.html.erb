@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Emo:</b>
+  <%= @bottle.emo %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @bottle.lat %>
+</p>
+
+<p>
+  <b>Long:</b>
+  <%= @bottle.long %>
+</p>
+
+<p>
+  <b>Msg:</b>
+  <%= @bottle.msg %>
+</p>
+
+<p>
+  <b>Uid:</b>
+  <%= @bottle.uid %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @bottle.time %>
+</p>
+
+
+<%= link_to 'Edit', edit_bottle_path(@bottle) %> |
+<%= link_to 'Back', bottles_path %>

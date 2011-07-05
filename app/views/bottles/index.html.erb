@@ -1,0 +1,33 @@
+<h1>Listing bottles</h1>
+
+<table>
+  <tr>
+    <th>Emo</th>
+    <th>Lat</th>
+    <th>Long</th>
+    <th>Msg</th>
+    <th>Uid</th>
+    <th>Time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bottles.each do |bottle| %>
+  <tr>
+    <td><%= bottle.emo %></td>
+    <td><%= bottle.lat %></td>
+    <td><%= bottle.long %></td>
+    <td><%= bottle.msg %></td>
+    <td><%= bottle.uid %></td>
+    <td><%= bottle.time %></td>
+    <td><%= link_to 'Show', bottle %></td>
+    <td><%= link_to 'Edit', edit_bottle_path(bottle) %></td>
+    <td><%= link_to 'Destroy', bottle, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bottle', new_bottle_path %>
