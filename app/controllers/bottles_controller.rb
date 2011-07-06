@@ -7,6 +7,7 @@ class BottlesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @bottles }
+			format.json { render :json => @bottles }
     end
   end
 
@@ -18,7 +19,8 @@ class BottlesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @bottle }
-    end
+    	format.json { render :json => @bottle }
+		end
   end
 
   # GET /bottles/new
@@ -29,6 +31,7 @@ class BottlesController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @bottle }
+			format.json { render :json => @bottle }
     end
   end
 
