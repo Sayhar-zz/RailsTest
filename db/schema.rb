@@ -10,15 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110705195756) do
+ActiveRecord::Schema.define(:version => 20110706024047) do
 
   create_table "bottles", :force => true do |t|
     t.integer  "emo"
     t.float    "lat"
     t.float    "long"
-    t.text     "msg"
-    t.integer  "uid"
-    t.integer  "time",       :limit => 8
+    t.string   "msg"
+    t.integer  "user_id"
+    t.integer  "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

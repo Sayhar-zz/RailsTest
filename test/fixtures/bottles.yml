@@ -4,7 +4,7 @@ one:
   emo: 1
   lat: 1.5
   long: 1.5
-  msg: MyText
+  msg: MyString
   uid: 1
   time: 1
 
@@ -12,6 +12,6 @@ two:
   emo: 1
   lat: 1.5
   long: 1.5
-  msg: MyText
+  msg: MyString
   uid: 1
   time: 1
