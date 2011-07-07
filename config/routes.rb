@@ -1,7 +1,15 @@
 Happytrials::Application.routes.draw do
-  resources :users
+  
+  resources :users do
+    resources :bottles
+  end
+  
+  resources :bottles do
+    collection do 
+      get 'recent'
+    end
+  end
 
-  resources :bottles
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

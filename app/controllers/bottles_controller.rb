@@ -10,6 +10,17 @@ class BottlesController < ApplicationController
 			format.json { render :json => @bottles }
     end
   end
+  
+  def recent
+    @bottles = Bottle.recent
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @bottles }
+			format.json { render :json => @bottles }
+    end
+  end
+  
 
   # GET /bottles/1
   # GET /bottles/1.xml
