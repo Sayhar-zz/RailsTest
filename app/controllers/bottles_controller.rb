@@ -11,6 +11,18 @@ class BottlesController < ApplicationController
     end
   end
   
+  def local
+    @bottles = Bottle.where(" lat > ? and lat < ? and long > ? and long < ? ",params[:lat1],params[:lat2],params[:long1],params[:long2]).order("time DESC").limit(params[:recent])
+    
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @bottles }
+			format.json { render :json => @bottles }
+    end
+  end
+  
+  
   def recent
     @bottles = Bottle.recent
 

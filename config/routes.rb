@@ -9,6 +9,8 @@ Happytrials::Application.routes.draw do
       get 'recent'
     end
   end
+  
+ match "bottles/local/:lat1/:lat2/:long1/:long2/:recent" => "bottles#local"
 
 
   # The priority is based upon order of creation:
