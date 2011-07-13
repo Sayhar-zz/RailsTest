@@ -1,4 +1,8 @@
 class BottlesController < ApplicationController
+  #USER_NAME, PASSWORD = "dhh", "secret"
+  #before_filter :authenticate
+
+  
   # GET /bottles
   # GET /bottles.xml
   def index
@@ -106,4 +110,13 @@ class BottlesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
+  private
+    def authenticate
+      authenticate_or_request_with_http_basic do |user_name, password|
+        user_name == USER_NAME && password == PASSWORD
+      end
+    end
+        
 end
