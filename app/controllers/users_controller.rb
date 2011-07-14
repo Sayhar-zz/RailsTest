@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   USER_NAME, PASSWORD = "dhh", "secret"
-  #before_filter :authenticate
+  before_filter :authenticate
   
   
   
