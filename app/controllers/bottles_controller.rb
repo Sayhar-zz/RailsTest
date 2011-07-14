@@ -1,6 +1,6 @@
 class BottlesController < ApplicationController
   USER_NAME, PASSWORD = "dhh", "secret"
-  before_filter :authenticate
+  #before_filter :authenticate
 
   
   # GET /bottles
