@@ -3,7 +3,18 @@ class UsersController < ApplicationController
   before_filter :authenticate
   
   
-  
+  	def find
+    		@users = User.where("email = ?", params[:email]).limit(1)
+			#	@users= User.all	
+    		respond_to do |format|
+          format.html # show.html.erb
+          format.xml  { render :xml => @users }
+          format.json {render :json => @users}
+        end 
+      end   
+      
+      
+    
   # GET /users
   # GET /users.xml
   def index
@@ -88,7 +99,8 @@ class UsersController < ApplicationController
     end
   end
   
-  
+
+ 
   private
     def authenticate
       authenticate_or_request_with_http_basic do |user_name, password|
