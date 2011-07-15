@@ -14,6 +14,8 @@ Happytrials::Application.routes.draw do
  match 'finduser' => "users#find"
  match "bottles/local/:lat1/:lat2/:long1/:long2/:recent" => "bottles#local"
 
+
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
