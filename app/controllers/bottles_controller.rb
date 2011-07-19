@@ -17,13 +17,20 @@ class BottlesController < ApplicationController
   
   def local
     @bottles = Bottle.where(" lat > ? and lat < ? and long > ? and long < ? ",params[:lat1],params[:lat2],params[:long1],params[:long2]).order("time DESC").limit(params[:recent])
-    
-    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @bottles }
 			format.json { render :json => @bottles }
     end
+  end
+  
+  def localbefore
+  @bottles = Bottle.where(" lat > ? and lat < ? and long > ? and long < ? and time < ? ",params[:lat1],params[:lat2],params[:long1],params[:long2],params[:beforetime]).order("time DESC").limit(params[:recent])  
+  respond_to do |format|
+    format.html # index.html.erb
+    format.xml  { render :xml => @bottles }
+		format.json { render :json => @bottles }
+  end
   end
   
   

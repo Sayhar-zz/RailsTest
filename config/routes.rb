@@ -11,9 +11,9 @@ Happytrials::Application.routes.draw do
       get 'recent'
     end
   end
- match 'finduser' => "users#find"
- match "bottles/local/:lat1/:lat2/:long1/:long2/:recent" => "bottles#local"
-
+  match 'finduser' => "users#find"
+  match "bottles/local/:lat1/:lat2/:long1/:long2/:recent" => "bottles#local"
+  match "bottles/local/:lat1/:lat2/:long1/:long2/:recent/:beforetime" => "bottles#localbefore"
 
    
   # The priority is based upon order of creation:
