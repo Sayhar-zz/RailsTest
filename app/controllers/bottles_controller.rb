@@ -26,8 +26,13 @@ class BottlesController < ApplicationController
   end
   
   def localbefore
-  @bottles = Bottle.where(" lat > ? and lat < ? and long > ? and long < ? and time < ? ",params[:lat1],params[:lat2],params[:long1],params[:long2],params[:beforetime]).order("time DESC").limit(params[:recent])  
-  respond_to do |format|
+    inttime = Integer(params[:beforetime])
+	if (inttime > 0)
+  	@bottles = Bottle.where(" lat > ? and lat < ? and long > ? and long < ? and time > ? ",params[:lat1],params[:lat2],params[:long1],params[:long2],params[:beforetime]).order("time DESC").limit(params[:recent])  
+	else
+		@bottles = Bottle.where(" lat > ? and lat < ? and long > ? and long < ? and time < ? ",params[:lat1],params[:lat2],params[:long1],params[:long2],-1 * inttime).order("time ASC").limit(params[:recent])
+	end  
+    respond_to do |format|
     format.html # index.html.erb
     format.xml  { render :xml => @bottles }
 		format.json { render :json => @bottles }
