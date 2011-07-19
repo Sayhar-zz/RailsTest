@@ -8,10 +8,7 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 gem 'admin_data'
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 # Use unicorn as the web server
 # gem 'unicorn'
 
