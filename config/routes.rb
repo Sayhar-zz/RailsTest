@@ -7,9 +7,7 @@ Happytrials::Application.routes.draw do
   end
   
   resources :bottles do
-    collection do 
-      get 'recent'
-    end
+  
   end
   match 'finduser' => "users#find"
   match "bottles/local/:lat1/:lat2/:long1/:long2/:recent" => "bottles#local"

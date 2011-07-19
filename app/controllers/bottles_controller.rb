@@ -3,8 +3,12 @@ class BottlesController < ApplicationController
   # GET /bottles
   # GET /bottles.xml
   def index
-    @bottles = Bottle.all
-
+    #@bottles = Bottle.all
+    if params[:user_id].nil?
+      @bottles = Bottle.all
+    else
+      @bottles = User.find(params[:user_id]).bottles
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @bottles }
