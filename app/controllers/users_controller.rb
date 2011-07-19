@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-  USER_NAME, PASSWORD = "dhh", "secret"
-  before_filter :authenticate
-  
-  
-  	def find
+ 	def find
     		@users = User.where("email = ?", params[:email]).limit(1)
 			#	@users= User.all	
     		respond_to do |format|
