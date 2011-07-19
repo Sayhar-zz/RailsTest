@@ -12,10 +12,11 @@ Happytrials::Application.routes.draw do
   match 'finduser' => "users#find"
   match "bottles/local/:lat1/:lat2/:long1/:long2/:recent" => "bottles#local"
   match "bottles/local/:lat1/:lat2/:long1/:long2/:recent/:beforetime" => "bottles#localbefore"
+  match '/admin_data', :to => 'admin_data/home#index'
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-    root :to => redirect("root")
+    root :to => redirect("/admin_data")
    
   # The priority is based upon order of creation:
   # first created -> highest priority.
